@@ -421,16 +421,16 @@ const groups = {
     { name: "Uruguay", code: "uy", pts: 1, w: 0, d: 1, l: 0, gf: 1, ga: 1, gd: 0, pld: 1, status: "" }
   ] },
   I: { teams: [
-    { name: "France", code: "fr", pts: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pld: 0, status: "" },
-    { name: "Senegal", code: "sn", pts: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pld: 0, status: "" },
-    { name: "Iraq", code: "iq", pts: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pld: 0, status: "" },
-    { name: "Norway", code: "no", pts: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pld: 0, status: "" }
+    { name: "Norway", code: "no", pts: 3, w: 1, d: 0, l: 0, gf: 4, ga: 1, gd: 3, pld: 1, status: "" },
+    { name: "France", code: "fr", pts: 3, w: 1, d: 0, l: 0, gf: 3, ga: 1, gd: 2, pld: 1, status: "" },
+    { name: "Senegal", code: "sn", pts: 0, w: 0, d: 0, l: 1, gf: 1, ga: 3, gd: -2, pld: 1, status: "" },
+    { name: "Iraq", code: "iq", pts: 0, w: 0, d: 0, l: 1, gf: 1, ga: 4, gd: -3, pld: 1, status: "" }
   ] },
   J: { teams: [
-    { name: "Argentina", code: "ar", pts: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pld: 0, status: "" },
-    { name: "Algeria", code: "dz", pts: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pld: 0, status: "" },
-    { name: "Austria", code: "at", pts: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pld: 0, status: "" },
-    { name: "Jordan", code: "jo", pts: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pld: 0, status: "" }
+    { name: "Argentina", code: "ar", pts: 3, w: 1, d: 0, l: 0, gf: 3, ga: 0, gd: 3, pld: 1, status: "" },
+    { name: "Austria", code: "at", pts: 3, w: 1, d: 0, l: 0, gf: 3, ga: 1, gd: 2, pld: 1, status: "" },
+    { name: "Algeria", code: "dz", pts: 0, w: 0, d: 0, l: 1, gf: 0, ga: 3, gd: -3, pld: 1, status: "" },
+    { name: "Jordan", code: "jo", pts: 0, w: 0, d: 0, l: 1, gf: 1, ga: 3, gd: -2, pld: 1, status: "" }
   ] },
   K: { teams: [
     { name: "Portugal", code: "pt", pts: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pld: 0, status: "" },
@@ -504,15 +504,15 @@ const matches = [
   { group: "H", date: "Jun 26", home: "Cape Verde", away: "Saudi Arabia", score: "—", venue: "NRG Stadium, Houston" },
   { group: "H", date: "Jun 26", home: "Uruguay", away: "Spain", score: "—", venue: "Estadio Akron, Guadalajara" },
   // Group I
-  { group: "I", date: "Jun 16", home: "France", away: "Senegal", score: "—", venue: "MetLife Stadium, New Jersey" },
-  { group: "I", date: "Jun 16", home: "Iraq", away: "Norway", score: "—", venue: "Gillette Stadium, Boston" },
+  { group: "I", date: "Jun 16", home: "France", away: "Senegal", score: "3-1", venue: "MetLife Stadium, New Jersey" },
+  { group: "I", date: "Jun 16", home: "Iraq", away: "Norway", score: "1-4", venue: "Gillette Stadium, Boston" },
   { group: "I", date: "Jun 22", home: "France", away: "Iraq", score: "—", venue: "Lincoln Financial Field, Philadelphia" },
   { group: "I", date: "Jun 22", home: "Norway", away: "Senegal", score: "—", venue: "MetLife Stadium, New Jersey" },
   { group: "I", date: "Jun 26", home: "Norway", away: "France", score: "—", venue: "Gillette Stadium, Boston" },
   { group: "I", date: "Jun 26", home: "Senegal", away: "Iraq", score: "—", venue: "BMO Field, Toronto" },
   // Group J
-  { group: "J", date: "Jun 16", home: "Argentina", away: "Algeria", score: "—", venue: "Arrowhead Stadium, Kansas City" },
-  { group: "J", date: "Jun 16", home: "Austria", away: "Jordan", score: "—", venue: "Levi's Stadium, Santa Clara" },
+  { group: "J", date: "Jun 16", home: "Argentina", away: "Algeria", score: "3-0", venue: "Arrowhead Stadium, Kansas City" },
+  { group: "J", date: "Jun 16", home: "Austria", away: "Jordan", score: "1-3", venue: "Levi's Stadium, Santa Clara" },
   { group: "J", date: "Jun 22", home: "Argentina", away: "Austria", score: "—", venue: "AT&T Stadium, Dallas" },
   { group: "J", date: "Jun 22", home: "Jordan", away: "Algeria", score: "—", venue: "Levi's Stadium, Santa Clara" },
   { group: "J", date: "Jun 27", home: "Algeria", away: "Austria", score: "—", venue: "Arrowhead Stadium, Kansas City" },
