@@ -666,6 +666,7 @@ h1 .trophy { font-size: 32px; }
 
 <div class="tabs">
   <button class="tab active" data-tab="groups">Groups</button>
+  <button class="tab" data-tab="thirdplace">3rd Place</button>
   <button class="tab" data-tab="matches">Matches</button>
   <button class="tab" data-tab="bracket">Knockout Bracket</button>
 </div>
@@ -679,6 +680,18 @@ h1 .trophy { font-size: 32px; }
 <!-- GROUPS -->
 <div id="groups-panel" class="matches-panel active">
   <div class="groups-grid" id="groups-grid"></div>
+</div>
+
+
+<!-- 3RD PLACE TABLE -->
+<div id="thirdplace-panel" class="matches-panel">
+  <p style="font-size:13px;color:var(--color-text-secondary,#44546f);margin-bottom:12px;">The <strong>8 best 3rd-placed teams</strong> across all 12 groups qualify for the Round of 32. Ranked by: Points → Goal Difference → Goals For.</p>
+  <div class="group-card" style="max-width:700px;">
+    <div class="group-header">3rd Place Rankings <span class="badge">Top 8 qualify</span></div>
+    <table class="group-table" id="thirdplace-table">
+      <tbody><tr><th>Pos</th><th>Group</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr>
+    </tbody></table>
+  </div>
 </div>
 
 <!-- MATCHES -->
@@ -1019,6 +1032,43 @@ function getCode(name) {
   return map[name] || "un";
 }
 
+
+// Render 3rd place table
+function renderThirdPlace() {
+  const table = document.getElementById('thirdplace-table');
+  if (!table) return;
+  // Get 3rd place team from each group (index 2 after sorting by pts)
+  const thirdPlaceTeams = [];
+  Object.entries(groups).forEach(([letter, group]) => {
+    const sorted = [...group.teams].sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.gf - a.gf);
+    if (sorted.length >= 3 && sorted[2].pld > 0) {
+      thirdPlaceTeams.push({ ...sorted[2], group: letter });
+    }
+  });
+  // Sort 3rd place teams: pts desc, gd desc, gf desc
+  thirdPlaceTeams.sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.gf - a.gf);
+  
+  // Clear existing rows (keep header)
+  while (table.rows.length > 1) table.deleteRow(1);
+  
+  thirdPlaceTeams.forEach((t, i) => {
+    const qualified = i < 8;
+    const owner = sweepstake[t.name] ? `<span class="sweepstake-name">(${sweepstake[t.name]})</span>` : '';
+    const statusClass = qualified ? 'qualified' : 'eliminated';
+    const pos = i + 1;
+    const row = table.insertRow();
+    row.className = statusClass;
+    row.innerHTML = `
+      <td style="text-align:center;font-weight:600">${pos}</td>
+      <td style="text-align:center">${t.group}</td>
+      <td><div class="team-name">${flagImg(t.code)} ${t.name} ${owner}</div></td>
+      <td>${t.pld}</td><td>${t.w}</td><td>${t.d}</td><td>${t.l}</td>
+      <td>${t.gf}</td><td>${t.ga}</td><td style="font-weight:600">${t.gd > 0 ? '+' : ''}${t.gd}</td>
+      <td style="font-weight:700">${t.pts}</td>
+    `;
+  });
+}
+
 // Tab switching
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', function() {
@@ -1026,12 +1076,16 @@ document.querySelectorAll('.tab').forEach(tab => {
     this.classList.add('active');
     const target = this.dataset.tab;
     document.getElementById('groups-panel').classList.toggle('active', target === 'groups');
+    document.getElementById('thirdplace-panel').classList.toggle('active', target === 'thirdplace');
     document.getElementById('matches-panel').classList.toggle('active', target === 'matches');
     document.getElementById('bracket-panel').classList.toggle('active', target === 'bracket');
     if (target === 'matches') {
       renderMatchFilters();
       renderMatches('All');
       if (currentSearch) highlightMatches(currentSearch);
+    }
+    if (target === 'thirdplace') {
+      renderThirdPlace();
     }
     if (target === 'bracket') {
       renderBracket();
@@ -1126,6 +1180,7 @@ document.getElementById('team-search').addEventListener('input', function() {
 
 // Initial render
 renderGroups();
+renderThirdPlace();
 </script>
 
 </body></html>
