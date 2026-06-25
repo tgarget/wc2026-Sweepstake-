@@ -711,22 +711,22 @@ const sweepstake = {
 
 const groups = {
   A: { teams: [
-    { name: "Mexico", code: "mx", pts: 6, w: 2, d: 0, l: 0, gf: 3, ga: 0, gd: 3, pld: 2, status: "q" },
-    { name: "South Korea", code: "kr", pts: 3, w: 1, d: 0, l: 1, gf: 2, ga: 2, gd: 0, pld: 2, status: "" },
-    { name: "Czech Republic", code: "cz", pts: 1, w: 0, d: 1, l: 1, gf: 2, ga: 3, gd: -1, pld: 2, status: "" },
-    { name: "South Africa", code: "za", pts: 1, w: 0, d: 1, l: 1, gf: 1, ga: 3, gd: -2, pld: 2, status: "" }
+    { name: "Mexico", code: "mx", pts: 9, w: 3, d: 0, l: 0, gf: 6, ga: 0, gd: 6, pld: 3, status: "q" },
+    { name: "South Africa", code: "za", pts: 4, w: 1, d: 1, l: 1, gf: 2, ga: 3, gd: -1, pld: 3, status: "q" },
+    { name: "South Korea", code: "kr", pts: 3, w: 1, d: 0, l: 2, gf: 2, ga: 3, gd: -1, pld: 3, status: "p" },
+    { name: "Czech Republic", code: "cz", pts: 1, w: 0, d: 1, l: 2, gf: 2, ga: 6, gd: -4, pld: 3, status: "e" }
   ], host: "Mexico" },
   B: { teams: [
-    { name: "Canada", code: "ca", pts: 4, w: 1, d: 1, l: 0, gf: 7, ga: 1, gd: 6, pld: 2, status: "q" },
-    { name: "Switzerland", code: "ch", pts: 4, w: 1, d: 1, l: 0, gf: 5, ga: 2, gd: 3, pld: 2, status: "" },
-    { name: "Qatar", code: "qa", pts: 1, w: 0, d: 1, l: 1, gf: 1, ga: 7, gd: -6, pld: 2, status: "" },
-    { name: "Bosnia & Herz.", code: "ba", pts: 1, w: 0, d: 1, l: 1, gf: 2, ga: 5, gd: -3, pld: 2, status: "" }
+    { name: "Switzerland", code: "ch", pts: 7, w: 2, d: 1, l: 0, gf: 7, ga: 3, gd: 4, pld: 3, status: "q" },
+    { name: "Canada", code: "ca", pts: 4, w: 1, d: 1, l: 1, gf: 8, ga: 3, gd: 5, pld: 3, status: "q" },
+    { name: "Bosnia & Herz.", code: "ba", pts: 4, w: 1, d: 1, l: 1, gf: 5, ga: 6, gd: -1, pld: 3, status: "p" },
+    { name: "Qatar", code: "qa", pts: 1, w: 0, d: 1, l: 2, gf: 2, ga: 10, gd: -8, pld: 3, status: "e" }
   ], host: "Canada" },
   C: { teams: [
-    { name: "Brazil", code: "br", pts: 4, w: 1, d: 1, l: 0, gf: 4, ga: 1, gd: 3, pld: 2, status: "" },
-    { name: "Morocco", code: "ma", pts: 4, w: 1, d: 1, l: 0, gf: 2, ga: 1, gd: 1, pld: 2, status: "" },
-    { name: "Scotland", code: "gb-sct", pts: 3, w: 1, d: 0, l: 1, gf: 1, ga: 1, gd: 0, pld: 2, status: "" },
-    { name: "Haiti", code: "ht", pts: 0, w: 0, d: 0, l: 2, gf: 0, ga: 4, gd: -4, pld: 2, status: "e" }
+    { name: "Brazil", code: "br", pts: 7, w: 2, d: 1, l: 0, gf: 7, ga: 1, gd: 6, pld: 3, status: "q" },
+    { name: "Morocco", code: "ma", pts: 7, w: 2, d: 1, l: 0, gf: 6, ga: 3, gd: 3, pld: 3, status: "q" },
+    { name: "Scotland", code: "gb-sct", pts: 3, w: 1, d: 0, l: 2, gf: 1, ga: 4, gd: -3, pld: 3, status: "p" },
+    { name: "Haiti", code: "ht", pts: 0, w: 0, d: 0, l: 3, gf: 2, ga: 8, gd: -6, pld: 3, status: "e" }
   ] },
   D: { teams: [
     { name: "United States", code: "us", pts: 6, w: 2, d: 0, l: 0, gf: 6, ga: 1, gd: 5, pld: 2, status: "q" },
@@ -790,22 +790,22 @@ const matches = [
   { group: "A", date: "Jun 11", home: "South Korea", away: "Czech Republic", score: "2-1", venue: "Estadio Akron, Guadalajara" },
   { group: "A", date: "Jun 18", home: "Czech Republic", away: "South Africa", score: "1-1", venue: "Mercedes-Benz Stadium, Atlanta" },
   { group: "A", date: "Jun 18", home: "Mexico", away: "South Korea", score: "1-0", venue: "Estadio Akron, Guadalajara" },
-  { group: "A", date: "Jun 24", home: "Czech Republic", away: "Mexico", score: "—", venue: "Estadio Azteca, Mexico City" },
-  { group: "A", date: "Jun 24", home: "South Africa", away: "South Korea", score: "—", venue: "Estadio BBVA, Monterrey" },
+  { group: "A", date: "Jun 24", home: "Czech Republic", away: "Mexico", score: "0-3", venue: "Estadio Azteca, Mexico City" },
+  { group: "A", date: "Jun 24", home: "South Africa", away: "South Korea", score: "1-0", venue: "Estadio BBVA, Monterrey" },
   // Group B
   { group: "B", date: "Jun 12", home: "Canada", away: "Bosnia & Herz.", score: "1-1", venue: "BMO Field, Toronto" },
   { group: "B", date: "Jun 13", home: "Qatar", away: "Switzerland", score: "1-1", venue: "Levi's Stadium, Santa Clara" },
   { group: "B", date: "Jun 18", home: "Switzerland", away: "Bosnia & Herz.", score: "4-1", venue: "SoFi Stadium, Los Angeles" },
   { group: "B", date: "Jun 18", home: "Canada", away: "Qatar", score: "6-0", venue: "BC Place, Vancouver" },
-  { group: "B", date: "Jun 24", home: "Switzerland", away: "Canada", score: "—", venue: "BC Place, Vancouver" },
-  { group: "B", date: "Jun 24", home: "Bosnia & Herz.", away: "Qatar", score: "—", venue: "Lumen Field, Seattle" },
+  { group: "B", date: "Jun 24", home: "Switzerland", away: "Canada", score: "2-1", venue: "BC Place, Vancouver" },
+  { group: "B", date: "Jun 24", home: "Bosnia & Herz.", away: "Qatar", score: "3-1", venue: "Lumen Field, Seattle" },
   // Group C
   { group: "C", date: "Jun 13", home: "Brazil", away: "Morocco", score: "1-1", venue: "MetLife Stadium, New Jersey" },
   { group: "C", date: "Jun 13", home: "Haiti", away: "Scotland", score: "0-1", venue: "Gillette Stadium, Boston" },
   { group: "C", date: "Jun 19", home: "Scotland", away: "Morocco", score: "0-1", venue: "Gillette Stadium, Boston" },
   { group: "C", date: "Jun 19", home: "Brazil", away: "Haiti", score: "3-0", venue: "Lincoln Financial Field, Philadelphia" },
-  { group: "C", date: "Jun 24", home: "Scotland", away: "Brazil", score: "—", venue: "Hard Rock Stadium, Miami" },
-  { group: "C", date: "Jun 24", home: "Morocco", away: "Haiti", score: "—", venue: "Mercedes-Benz Stadium, Atlanta" },
+  { group: "C", date: "Jun 24", home: "Scotland", away: "Brazil", score: "0-3", venue: "Hard Rock Stadium, Miami" },
+  { group: "C", date: "Jun 24", home: "Morocco", away: "Haiti", score: "4-2", venue: "Mercedes-Benz Stadium, Atlanta" },
   // Group D
   { group: "D", date: "Jun 12", home: "United States", away: "Paraguay", score: "4-1", venue: "SoFi Stadium, Los Angeles" },
   { group: "D", date: "Jun 13", home: "Australia", away: "Turkey", score: "2-0", venue: "BC Place, Vancouver" },
