@@ -665,10 +665,10 @@ h1 .trophy { font-size: 32px; }
 </div>
 
 <div class="tabs">
-  <button class="tab active" data-tab="groups">Groups</button>
+  <button class="tab" data-tab="groups">Groups</button>
   <button class="tab" data-tab="thirdplace">3rd Place</button>
   <button class="tab" data-tab="matches">Matches</button>
-  <button class="tab" data-tab="bracket">Knockout Bracket</button>
+  <button class="tab active" data-tab="bracket">Knockout Bracket</button>
 </div>
 
 <div class="legend">
@@ -678,7 +678,7 @@ h1 .trophy { font-size: 32px; }
 </div>
 
 <!-- GROUPS -->
-<div id="groups-panel" class="matches-panel active">
+<div id="groups-panel" class="matches-panel">
   <div class="groups-grid" id="groups-grid"></div>
 </div>
 
@@ -701,7 +701,7 @@ h1 .trophy { font-size: 32px; }
 </div>
 
 <!-- BRACKET -->
-<div id="bracket-panel" class="bracket-container">
+<div id="bracket-panel" class="bracket-container active">
   <div class="bracket-wrapper" id="bracket-wrapper"></div>
 </div>
 
@@ -885,49 +885,49 @@ const matches = [
 ];
 
 const knockoutRounds = [
-  { name: "Round of 32", dates: "Jun 28 – Jul 3", matches: [
-    { home: "2nd A", away: "2nd B", date: "Jun 28", venue: "Los Angeles" },
-    { home: "Winner E", away: "3rd ABCDF", date: "Jun 29", venue: "Boston" },
-    { home: "Winner F", away: "2nd C", date: "Jun 29", venue: "Monterrey" },
-    { home: "Winner C", away: "2nd F", date: "Jun 29", venue: "Houston" },
-    { home: "2nd E", away: "2nd I", date: "Jun 30", venue: "Dallas" },
-    { home: "Winner I", away: "3rd CDFGH", date: "Jun 30", venue: "New Jersey" },
-    { home: "Winner A", away: "3rd CEFHI", date: "Jun 30", venue: "Mexico City" },
-    { home: "Winner L", away: "3rd EHIJK", date: "Jul 1", venue: "Atlanta" },
-    { home: "Winner G", away: "3rd AEHIJ", date: "Jul 1", venue: "Seattle" },
-    { home: "Winner D", away: "3rd BEFIJ", date: "Jul 1", venue: "Santa Clara" },
-    { home: "Winner H", away: "2nd J", date: "Jul 2", venue: "Los Angeles" },
-    { home: "2nd K", away: "2nd L", date: "Jul 2", venue: "Toronto" },
-    { home: "Winner B", away: "3rd EFGIJ", date: "Jul 2", venue: "Vancouver" },
-    { home: "2nd D", away: "2nd G", date: "Jul 3", venue: "Dallas" },
-    { home: "Winner J", away: "2nd H", date: "Jul 3", venue: "Miami" },
-    { home: "Winner K", away: "3rd DEIJL", date: "Jul 3", venue: "Kansas City" }
+  { name: "Round of 32", dates: "Jun 28 \u2013 Jul 3", matches: [
+    { home: "Canada (Hemanth)", away: "South Africa (Serge)", date: "Jun 28", venue: "Los Angeles", score: "1-0" },
+    { home: "Brazil (Jen)", away: "Japan (Terry)", date: "Jun 29", venue: "Houston" },
+    { home: "Germany (Irina)", away: "Paraguay (Greg)", date: "Jun 29", venue: "Boston" },
+    { home: "Netherlands (Nupur)", away: "Morocco (Nikki)", date: "Jun 29", venue: "Monterrey" },
+    { home: "Ivory Coast (Bastien)", away: "Norway (Bastien)", date: "Jun 30", venue: "Dallas" },
+    { home: "France (Jutta)", away: "Sweden (Jutta)", date: "Jun 30", venue: "New Jersey" },
+    { home: "Mexico (George)", away: "Ecuador (Rodrigo)", date: "Jun 30", venue: "Mexico City" },
+    { home: "England (Riarna)", away: "DR Congo (Nikki)", date: "Jul 1", venue: "Atlanta" },
+    { home: "Belgium (Katie)", away: "Senegal (Makis)", date: "Jul 1", venue: "Seattle" },
+    { home: "USA (Nupur)", away: "Bosnia (Oana)", date: "Jul 1", venue: "Santa Clara" },
+    { home: "Spain (Freya)", away: "Austria (Brayan)", date: "Jul 2", venue: "Los Angeles" },
+    { home: "Portugal (Mary)", away: "Croatia (Ankita)", date: "Jul 2", venue: "Toronto" },
+    { home: "Switzerland (Serge)", away: "Algeria (Hareem)", date: "Jul 2", venue: "Vancouver" },
+    { home: "Egypt (Maggie)", away: "Australia (George)", date: "Jul 3", venue: "Dallas" },
+    { home: "Argentina (Katie)", away: "Cape Verde (Freya)", date: "Jul 3", venue: "Miami" },
+    { home: "Colombia (Aurelie)", away: "Ghana (Terry)", date: "Jul 3", venue: "Kansas City" }
   ]},
-  { name: "Round of 16", dates: "Jul 4 – Jul 7", matches: [
-    { home: "M73 Winner", away: "M75 Winner", date: "Jul 4", venue: "Houston" },
-    { home: "M74 Winner", away: "M77 Winner", date: "Jul 4", venue: "Philadelphia" },
-    { home: "M76 Winner", away: "M78 Winner", date: "Jul 5", venue: "New Jersey" },
-    { home: "M79 Winner", away: "M80 Winner", date: "Jul 5", venue: "Mexico City" },
-    { home: "M83 Winner", away: "M84 Winner", date: "Jul 6", venue: "Dallas" },
-    { home: "M81 Winner", away: "M82 Winner", date: "Jul 6", venue: "Seattle" },
-    { home: "M86 Winner", away: "M88 Winner", date: "Jul 7", venue: "Atlanta" },
-    { home: "M85 Winner", away: "M87 Winner", date: "Jul 7", venue: "Vancouver" }
+  { name: "Round of 16", dates: "Jul 4 \u2013 Jul 7", matches: [
+    { home: "TBD", away: "TBD", date: "Jul 4", venue: "Houston" },
+    { home: "TBD", away: "TBD", date: "Jul 4", venue: "Philadelphia" },
+    { home: "TBD", away: "TBD", date: "Jul 5", venue: "New Jersey" },
+    { home: "TBD", away: "TBD", date: "Jul 5", venue: "Mexico City" },
+    { home: "TBD", away: "TBD", date: "Jul 6", venue: "Dallas" },
+    { home: "TBD", away: "TBD", date: "Jul 6", venue: "Seattle" },
+    { home: "TBD", away: "TBD", date: "Jul 7", venue: "Atlanta" },
+    { home: "TBD", away: "TBD", date: "Jul 7", venue: "Vancouver" }
   ]},
-  { name: "Quarterfinals", dates: "Jul 9 – Jul 11", matches: [
-    { home: "QF 1", away: "QF 2", date: "Jul 9", venue: "Boston" },
-    { home: "QF 3", away: "QF 4", date: "Jul 10", venue: "Los Angeles" },
-    { home: "QF 5", away: "QF 6", date: "Jul 11", venue: "Miami" },
-    { home: "QF 7", away: "QF 8", date: "Jul 11", venue: "Kansas City" }
+  { name: "Quarterfinals", dates: "Jul 9 \u2013 Jul 11", matches: [
+    { home: "TBD", away: "TBD", date: "Jul 9", venue: "Boston" },
+    { home: "TBD", away: "TBD", date: "Jul 10", venue: "Los Angeles" },
+    { home: "TBD", away: "TBD", date: "Jul 11", venue: "Miami" },
+    { home: "TBD", away: "TBD", date: "Jul 11", venue: "Kansas City" }
   ]},
-  { name: "Semifinals", dates: "Jul 14 – Jul 15", matches: [
-    { home: "SF 1", away: "SF 2", date: "Jul 14", venue: "Dallas" },
-    { home: "SF 3", away: "SF 4", date: "Jul 15", venue: "Atlanta" }
+  { name: "Semifinals", dates: "Jul 14 \u2013 Jul 15", matches: [
+    { home: "TBD", away: "TBD", date: "Jul 14", venue: "Dallas" },
+    { home: "TBD", away: "TBD", date: "Jul 15", venue: "Atlanta" }
   ]},
   { name: "3rd Place", dates: "Jul 18", matches: [
-    { home: "SF Loser 1", away: "SF Loser 2", date: "Jul 18", venue: "Miami" }
+    { home: "TBD", away: "TBD", date: "Jul 18", venue: "Miami" }
   ]},
   { name: "Final", dates: "Jul 19", matches: [
-    { home: "SF Winner 1", away: "SF Winner 2", date: "Jul 19", venue: "New Jersey" }
+    { home: "TBD", away: "TBD", date: "Jul 19", venue: "New Jersey" }
   ]}
 ];
 
@@ -1001,11 +1001,13 @@ function renderBracket() {
     col.className = 'bracket-round';
     col.innerHTML = `<div class="round-title">${round.name}<br><span style="font-weight:400;font-size:10px">${round.dates}</span></div>`;
     round.matches.forEach(m => {
+      const score = m.score || '\u2013';
+      const scoreClass = m.score ? 'played' : '';
       col.innerHTML += `
         <div class="bracket-match">
-          <div class="bm-team"><span>${m.home}</span><span class="bm-score">–</span></div>
-          <div class="bm-team"><span>${m.away}</span><span class="bm-score">–</span></div>
-          <div class="bm-date">${m.date} • ${m.venue}</div>
+          <div class="bm-team"><span>${getBracketFlag(m.home)}${m.home}</span><span class="bm-score ${scoreClass}">${m.score ? m.score.split('-')[0] : '\u2013'}</span></div>
+          <div class="bm-team"><span>${getBracketFlag(m.away)}${m.away}</span><span class="bm-score ${scoreClass}">${m.score ? m.score.split('-')[1] : '\u2013'}</span></div>
+          <div class="bm-date">${m.date} \u2022 ${m.venue}</div>
         </div>
       `;
     });
@@ -1014,6 +1016,18 @@ function renderBracket() {
 }
 
 // Code lookup
+
+function getBracketFlag(text) {
+  // Extract team name from "TeamName (Owner)" format
+  const match = text.match(/^([^(]+)/);
+  const teamName = match ? match[1].trim() : text.trim();
+  const code = getCode(teamName);
+  if (code && code !== 'un') {
+    return flagImg(code) + ' ';
+  }
+  return '';
+}
+
 function getCode(name) {
   const map = {
     "Mexico": "mx", "South Africa": "za", "South Korea": "kr", "Czech Republic": "cz",
@@ -1181,6 +1195,7 @@ document.getElementById('team-search').addEventListener('input', function() {
 // Initial render
 renderGroups();
 renderThirdPlace();
+renderBracket();
 </script>
 
 </body></html>
