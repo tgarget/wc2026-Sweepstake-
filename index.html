@@ -904,7 +904,7 @@ const knockoutRounds = [
     { home: "Colombia (Aurelie)", away: "Ghana (Terry)", date: "Jul 3", venue: "Kansas City" }
   ]},
   { name: "Round of 16", dates: "Jul 4 \u2013 Jul 7", matches: [
-    { home: "TBD", away: "TBD", date: "Jul 4", venue: "Houston" },
+    { home: "Canada (Hemanth)", away: "TBD", date: "Jul 4", venue: "Houston" },
     { home: "TBD", away: "TBD", date: "Jul 4", venue: "Philadelphia" },
     { home: "TBD", away: "TBD", date: "Jul 5", venue: "New Jersey" },
     { home: "TBD", away: "TBD", date: "Jul 5", venue: "Mexico City" },
@@ -1029,6 +1029,9 @@ function getBracketFlag(text) {
 }
 
 function getCode(name) {
+  // Aliases for bracket display names
+  const aliases = { "USA": "United States", "Bosnia": "Bosnia & Herz." };
+  name = aliases[name] || name;
   const map = {
     "Mexico": "mx", "South Africa": "za", "South Korea": "kr", "Czech Republic": "cz",
     "Canada": "ca", "Bosnia & Herz.": "ba", "Qatar": "qa", "Switzerland": "ch",
