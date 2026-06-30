@@ -602,6 +602,17 @@ h1 .trophy { font-size: 32px; }
 .bracket-match .bm-team + .bm-team { border-top: 1px solid var(--color-border-light, #ebecf0); }
 .bracket-match .bm-team.winner { font-weight: 600; }
 .bracket-match .bm-score { font-family: var(--font-mono, monospace); }
+.bracket-match .bm-detail {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--color-primary, #0052CC);
+  background: rgba(0, 82, 204, 0.08);
+  border-radius: 100px;
+  padding: 2px 6px;
+  text-align: center;
+  margin-top: 3px;
+  letter-spacing: 0.02em;
+}
 .bracket-match .bm-date {
   font-size: 10px;
   color: var(--color-text-muted, #8993a4);
@@ -656,7 +667,7 @@ h1 .trophy { font-size: 32px; }
 </head>
 <body>
 
-<h1><span class="trophy">🏆</span> FIFA World Cup 2026</h1>
+<h1><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/00/2026_FIFA_World_Cup_logo.svg/120px-2026_FIFA_World_Cup_logo.svg.png" style="height:36px;vertical-align:middle;" alt="FIFA World Cup 2026"> FIFA World Cup 2026</h1>
 <p class="subtitle">Canada • Mexico • United States — June 11 to July 19, 2026 — 48 Teams, 104 Matches</p>
 
 <div class="search-wrapper">
@@ -888,8 +899,8 @@ const knockoutRounds = [
   { name: "Round of 32", dates: "Jun 28 \u2013 Jul 3", matches: [
     { home: "Canada (Hemanth)", away: "South Africa (Serge)", date: "Jun 28", venue: "Los Angeles", score: "1-0" },
     { home: "Brazil (Jen)", away: "Japan (Terry)", date: "Jun 29", venue: "Houston", score: "2-1" },
-    { home: "Germany (Irina)", away: "Paraguay (Greg)", date: "Jun 29", venue: "Boston", score: "1-1 (3-4p)" },
-    { home: "Netherlands (Nupur)", away: "Morocco (Nikki)", date: "Jun 29", venue: "Monterrey", score: "1-1 (2-3p)" },
+    { home: "Germany (Irina)", away: "Paraguay (Greg)", date: "Jun 29", venue: "Boston", score: "1-1", detail: "Pens 3-4" },
+    { home: "Netherlands (Nupur)", away: "Morocco (Nikki)", date: "Jun 29", venue: "Monterrey", score: "1-1", detail: "Pens 2-3" },
     { home: "Ivory Coast (Bastien)", away: "Norway (Bastien)", date: "Jun 30", venue: "Dallas" },
     { home: "France (Jutta)", away: "Sweden (Jutta)", date: "Jun 30", venue: "New Jersey" },
     { home: "Mexico (George)", away: "Ecuador (Rodrigo)", date: "Jun 30", venue: "Mexico City" },
@@ -1003,10 +1014,12 @@ function renderBracket() {
     round.matches.forEach(m => {
       const score = m.score || '\u2013';
       const scoreClass = m.score ? 'played' : '';
+      const detailBadge = m.detail ? `<div class="bm-detail">${m.detail}</div>` : '';
       col.innerHTML += `
         <div class="bracket-match">
           <div class="bm-team"><span>${getBracketFlag(m.home)}${m.home}</span><span class="bm-score ${scoreClass}">${m.score ? m.score.split('-')[0] : '\u2013'}</span></div>
           <div class="bm-team"><span>${getBracketFlag(m.away)}${m.away}</span><span class="bm-score ${scoreClass}">${m.score ? m.score.split('-')[1] : '\u2013'}</span></div>
+          ${detailBadge}
           <div class="bm-date">${m.date} \u2022 ${m.venue}</div>
         </div>
       `;
